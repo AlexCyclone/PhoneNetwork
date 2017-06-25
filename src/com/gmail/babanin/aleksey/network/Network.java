@@ -35,7 +35,7 @@ public class Network {
         return codeNetwork;
     }
 
-    private static boolean checkCodeFormat(String codeNetwork) {
+    private static final boolean checkCodeFormat(String codeNetwork) {
         try {
             if (codeNetwork.length() != 3 || Integer.parseInt(codeNetwork) < 0) {
                 return false;
