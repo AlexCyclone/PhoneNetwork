@@ -16,8 +16,8 @@ public class Phone {
         super();
         this.number = getNewPhoneNumber(network);
         this.network = network;
-        busy = false;
-        registered = false;
+        this.busy = false;
+        this.registered = false;
     }
 
     private static final String getNewPhoneNumber(Network network) {

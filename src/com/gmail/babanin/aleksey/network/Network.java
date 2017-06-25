@@ -17,9 +17,9 @@ public class Network {
         super();
         this.codeNetwork = checkCodeNetwork(codeNetwork);
         this.nameOperator = nameOperator;
-        maxNumber = -1;
+        this.maxNumber = -1;
+        this.registeredPhones = new ArrayList<Phone>();
         existingNetworks.add(this);
-        registeredPhones = new ArrayList<Phone>();
     }
 
     private static final String checkCodeNetwork(String codeNetwork) {
@@ -35,7 +35,7 @@ public class Network {
         return codeNetwork;
     }
 
-    protected static boolean checkCodeFormat(String codeNetwork) {
+    private static boolean checkCodeFormat(String codeNetwork) {
         try {
             if (codeNetwork.length() != 3 || Integer.parseInt(codeNetwork) < 0) {
                 return false;
@@ -96,7 +96,7 @@ public class Network {
         return null;
     }
 
-    protected String commutation(Phone caller, String phoneNumber) {
+    private String commutation(Phone caller, String phoneNumber) {
         if (!isNumberExist(phoneNumber)) {
             return "Dialed number does not exist";
         }
